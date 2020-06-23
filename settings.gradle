@@ -1,0 +1,4 @@
+rootProject.name = 'pact-jvm-birthday'
+include 'consumer'
+include 'provider'
+
