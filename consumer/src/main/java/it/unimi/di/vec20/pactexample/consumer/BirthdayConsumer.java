@@ -5,31 +5,6 @@ import java.time.LocalDateTime;
 
 public class BirthdayConsumer {
 
-  /*
-      private EmployeeRepository employeeRepository;TODO
-      private EmailService emailService;
-
-      public BirthdayService(EmployeeRepository employeeRepository, EmailService emailService) {
-          this.emailService = emailService;
-          this.employeeRepository = employeeRepository;
-      }
-
-      public void sendGreetings(LocalDate today) {
-          List<Employee> borns =
-                  employeeRepository.findEmployeesBornOn(today.getMonthValue(), today.getDayOfMonth());
-
-          if (!borns.isEmpty()) {
-              for (Employee e : borns) {
-                  try {
-                      emailService.sendEmail(
-                              e.getEmailAddress(), "Happy birthday!", "Happy birthday, dear " + e.getName() + "!");
-                  } catch (Exception ex) {
-                      System.err.println("Email not sent for employee:" + e.toString());
-                  }
-              }
-          }
-      }
-  */
   public static void main(String[] args) throws UnirestException {
     int day;
     int month;
@@ -40,7 +15,7 @@ public class BirthdayConsumer {
       day = LocalDateTime.now().getDayOfMonth();
       month = LocalDateTime.now().getMonthValue();
     }
-    System.out.println(
-        new Client("http://localhost:8080").fetchAndProcessData(month, day).toString());
+    System.out.println("Happy birthday, dear " +
+        new Client("http://localhost:8080").fetchAndProcessData(month, day).get(0) + "!");
   }
 }
