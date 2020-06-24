@@ -40,6 +40,7 @@ public class Client {
 
         if (data != null && data.isPresent()) {
             JSONObject jsonObject = data.get().getObject();
+            System.out.println(jsonObject.toString());
             String name = jsonObject.getString("name");
             String email = jsonObject.getString("emailaddress");
 
@@ -49,5 +50,11 @@ public class Client {
         } else {
             return Arrays.asList(null, null);
         }
+    }
+
+    public int getTest () throws UnirestException{
+        HttpRequest getRequest = Unirest.get(url + "/provider.json");
+        HttpResponse<JsonNode> jsonNodeHttpResponse = getRequest.asJson();
+        return jsonNodeHttpResponse.getStatus();
     }
 }
