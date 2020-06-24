@@ -28,7 +28,7 @@ import static org.hamcrest.CoreMatchers.is;
                     .path("/provider.json")
                     .method("GET")
                     .willRespondWith()
-                    .status(200)
+                    .status(400)
                     .toPact();
         }
 
@@ -37,7 +37,7 @@ import static org.hamcrest.CoreMatchers.is;
         public void pactWithOurProvider() throws UnirestException {
             Client client = new Client(provider.getUrl());
 
-            assertThat(client.getTest(), is(200));
+            assertThat(client.getTest(), is(400));
         }
     }
 

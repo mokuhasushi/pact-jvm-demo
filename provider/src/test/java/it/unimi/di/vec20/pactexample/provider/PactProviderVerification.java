@@ -28,7 +28,7 @@ public class PactProviderVerification {
     }
 
     @State("user john exists")
-    public void johnexists () {
+    public void johnExists () {
 
     }
 }

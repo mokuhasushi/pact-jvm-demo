@@ -7,6 +7,8 @@ public class EmployeeRepositoryApplication extends Application<EmployeeServiceCo
     @Override
     public void run(EmployeeServiceConfig configuration, Environment environment) throws Exception {
         environment.jersey().register(new RootResource());
+        environment.jersey().register(new NoDataExceptionMapper());
+        environment.jersey().register(new QueryParameterRequiredExceptionMapper());
     }
 
     public static void main(String[] args) throws Exception {

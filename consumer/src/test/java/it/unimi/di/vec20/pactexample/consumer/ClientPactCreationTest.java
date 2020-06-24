@@ -7,11 +7,16 @@ import au.com.dius.pact.consumer.junit.ConsumerPactTest;
 import au.com.dius.pact.core.model.RequestResponsePact;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import static org.junit.Assert.assertEquals;
 
 public class ClientPactCreationTest extends ConsumerPactTest {
     @Override
     protected RequestResponsePact createPact(PactDslWithProvider builder) {
+        Map<String, String> headers = new HashMap<String, String>();
+        headers.put("Content-Type", "application/json;");
 
         return builder
                 .given("user john exists")
@@ -20,6 +25,7 @@ public class ClientPactCreationTest extends ConsumerPactTest {
                 .method("GET")
                 .willRespondWith()
                 .status(400)
+                .body("{\"error\": \"valid month and day are required\"}")
                 .toPact();
     }
     @Override
