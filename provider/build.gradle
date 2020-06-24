@@ -3,6 +3,7 @@ plugins {
     id "au.com.dius.pact" version "4.1.2"
     id "com.wiredforcode.spawn" version "0.8.2"
     id 'application'
+    id "com.diffplug.gradle.spotless"
 }
 ext {
    javaMainClass = "it.unimi.di.vec20.pactexample.provider.EmployeeRepositoryApplication"
@@ -53,4 +54,10 @@ pact {
       }
     }
   }
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
 }

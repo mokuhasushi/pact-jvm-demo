@@ -4,15 +4,18 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployeeRepositoryDataStore implements EmployeeRepository {
-    public static final EmployeeRepositoryDataStore INSTANCE = new EmployeeRepositoryDataStore();
+  public static final EmployeeRepositoryDataStore INSTANCE = new EmployeeRepositoryDataStore();
 
-    private EmployeeRepositoryDataStore () {}
+  private EmployeeRepositoryDataStore() {}
 
-    private final ArrayList<Employee> sampleList = new ArrayList<>(List.of(new Employee("doe", "john", 1985, 6, 23, "john.doe@foobar.com")));
+  private final ArrayList<Employee> sampleList = new ArrayList<>();
 
-    @Override
-    public List<Employee> findEmployeesBornOn(int month, int day) {
-        return sampleList;
-    }
+  @Override
+  public List<Employee> findEmployeesBornOn(int month, int day) {
+    return sampleList;
+  }
 
+  public void addEmployee(Employee e) {
+    INSTANCE.sampleList.add(e);
+  }
 }

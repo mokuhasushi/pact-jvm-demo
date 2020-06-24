@@ -46,4 +46,8 @@ public class Employee {
         && (this.day == e.day)
         && (this.emailAddress.equals(e.emailAddress));
   }
+
+  public String getSurname() {
+    return surname;
+  }
 }
