@@ -45,7 +45,7 @@ public class ClientPactSpec {
   public RequestResponsePact returnNameEmail(PactDslWithProvider builder) {
     return builder
         .given("employee johndoe exists")
-        .uponReceiving("a request for json data")
+        .uponReceiving("a request for employees born on date")
         .path("/provider.json")
         .query("month=2&day=2")
         .method("GET")

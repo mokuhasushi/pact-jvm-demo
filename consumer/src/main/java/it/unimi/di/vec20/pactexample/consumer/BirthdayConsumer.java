@@ -15,7 +15,9 @@ public class BirthdayConsumer {
       day = LocalDateTime.now().getDayOfMonth();
       month = LocalDateTime.now().getMonthValue();
     }
-    System.out.println("Happy birthday, dear " +
-        new Client("http://localhost:8080").fetchAndProcessData(month, day).get(0) + "!");
+    System.out.println(
+        "Happy birthday, dear "
+            + new Client("http://localhost:8080").fetchAndProcessData(month, day).get(0)
+            + "!");
   }
 }
