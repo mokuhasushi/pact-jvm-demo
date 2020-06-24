@@ -55,6 +55,11 @@ pact {
     }
   }
 }
+test {
+    systemProperty 'pactBrokerUser', 'pactBrokerUser'
+    systemProperty 'pactBrokerPassword', 'pactBrokerPassword'
+    systemProperty 'pact.verifier.publishResults', 'true'
+}
 
 spotless {
     java {

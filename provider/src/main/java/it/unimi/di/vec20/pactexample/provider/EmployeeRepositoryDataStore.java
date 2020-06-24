@@ -18,4 +18,8 @@ public class EmployeeRepositoryDataStore implements EmployeeRepository {
   public void addEmployee(Employee e) {
     INSTANCE.sampleList.add(e);
   }
+
+  public void reset() {
+    sampleList.clear();
+  }
 }

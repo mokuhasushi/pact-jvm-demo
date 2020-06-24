@@ -2,6 +2,7 @@ plugins {
     id 'java'
     id 'application'
     id "com.diffplug.gradle.spotless"
+    id "au.com.dius.pact" version "4.1.2"
 }
 
 mainClassName = 'it.unimi.di.vec20.pactexample.consumer.BirthdayConsumer'
@@ -27,6 +28,13 @@ dependencies {
 spotless {
     java {
         googleJavaFormat()
+    }
+}
+pact {
+    publish {
+        pactBrokerUrl = 'http://localhost:80'
+        pactBrokerUsername = 'pactBrokerUser'
+        pactBrokerPassword = 'pactBrokerPassword'
     }
 }
 
