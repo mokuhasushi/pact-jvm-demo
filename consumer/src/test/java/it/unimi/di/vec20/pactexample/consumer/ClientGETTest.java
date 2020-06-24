@@ -18,13 +18,13 @@ import static org.hamcrest.CoreMatchers.is;
     public class ClientGETTest {
 
         @Rule
-        public PactProviderRule provider = new PactProviderRule("Our Provider", "localhost", 1234, this);
+        public PactProviderRule provider = new PactProviderRule("EmployeeRepositoryProvider", "localhost", 1234, this);
 
-        @Pact(provider = "Our Provider", consumer = "Our Little Consumer")
+        @Pact(provider = "EmployeeRepositoryProvider", consumer = "BirthdayConsumer")
         public RequestResponsePact pact(PactDslWithProvider builder) {
             return builder
                     .given("data count > 0")
-                    .uponReceiving("a request for json data")
+                    .uponReceiving("a request for get json data")
                     .path("/provider.json")
                     .method("GET")
                     .willRespondWith()
@@ -33,7 +33,7 @@ import static org.hamcrest.CoreMatchers.is;
         }
 
         @Test
-        @PactVerification("Our Provider")
+        @PactVerification("EmployeeRepositoryProvider")
         public void pactWithOurProvider() throws UnirestException {
             Client client = new Client(provider.getUrl());
 

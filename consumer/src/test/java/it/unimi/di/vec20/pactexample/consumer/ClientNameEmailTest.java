@@ -20,9 +20,9 @@ import static org.hamcrest.CoreMatchers.is;
 public class ClientNameEmailTest {
 
     @Rule
-    public PactProviderRule provider = new PactProviderRule("Our Provider", "localhost", 1234, this);
+    public PactProviderRule provider = new PactProviderRule("EmployeeRepositoryProvider", "localhost", 1234, this);
 
-    @Pact(provider = "Our Provider", consumer = "Our Little Consumer")
+    @Pact(provider = "EmployeeRepositoryProvider", consumer = "BirthdayConsumer")
     public RequestResponsePact returnNameEmail (PactDslWithProvider builder) {
         return builder
                 .given("data count > 0")
@@ -41,7 +41,7 @@ public class ClientNameEmailTest {
     }
 
     @Test
-    @PactVerification("Our Provider")
+    @PactVerification("EmployeeRepositoryProvider")
     public void pactReturnNameEmail() throws UnirestException {
         // Set up our HTTP client class
         Client client = new Client(provider.getUrl());

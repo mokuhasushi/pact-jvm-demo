@@ -27,3 +27,11 @@ spotless {
         googleJavaFormat()
     }
 }
+
+task copyPactToProvider(type: Copy) {
+    from "${project(':consumer').buildDir}/pacts"
+    into "${project(':provider').buildDir}/pacts"
+}
+
+task publishWorkshopPact(dependsOn: [copyPactToProvider],
+        description: 'Publish the pact file to the provider project')

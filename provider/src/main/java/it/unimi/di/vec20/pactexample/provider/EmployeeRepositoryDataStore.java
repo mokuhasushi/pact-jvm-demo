@@ -8,7 +8,7 @@ public class EmployeeRepositoryDataStore implements EmployeeRepository {
 
     private EmployeeRepositoryDataStore () {}
 
-    private final ArrayList<Employee> sampleList = new ArrayList<>(List.of(new Employee("Doe", "John", 1985, 6, 23, "john.doe@foobar.com")));
+    private final ArrayList<Employee> sampleList = new ArrayList<>(List.of(new Employee("doe", "john", 1985, 6, 23, "john.doe@foobar.com")));
 
     @Override
     public List<Employee> findEmployeesBornOn(int month, int day) {

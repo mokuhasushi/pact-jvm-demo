@@ -26,6 +26,7 @@ public class Client {
 
         getRequest = getRequest.queryString(queryS);
 
+
         HttpResponse<JsonNode> jsonNodeHttpResponse = getRequest.asJson();
         if (jsonNodeHttpResponse.getStatus() == 200) {
             return Optional.of(jsonNodeHttpResponse.getBody());

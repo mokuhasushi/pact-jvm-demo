@@ -18,9 +18,8 @@ public class ClientPactCreationTest extends ConsumerPactTest {
                 .uponReceiving("a request for employees born today")
                 .path("/provider.json")
                 .method("GET")
-                .body("")
                 .willRespondWith()
-                .status(200)
+                .status(400)
                 .toPact();
     }
     @Override
@@ -36,9 +35,9 @@ public class ClientPactCreationTest extends ConsumerPactTest {
     @Override
     protected void runTest(MockServer mockServer, PactTestExecutionContext context) {
         try {
-            assertEquals(200, new Client(mockServer.getUrl()).getTest());
+            assertEquals(400, new Client(mockServer.getUrl()).getTest());
         } catch (UnirestException e) {
-            assert false;
+            e.printStackTrace();
         }
     }
 }
