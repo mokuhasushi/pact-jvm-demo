@@ -1,0 +1,140 @@
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage[T1]{fontenc}
+\usepackage[italian]{babel}
+
+\usepackage{tikz}
+
+\title[Pact JVM]{Consumer-driven testing usando Pact JVM}
+\institute{Università degli Studi di Milano}
+\author[Antonio Tirone]{}
+\date{2019-2020}
+
+%Qui selezioni tema e colori. http://deic.uab.es/~iblanes/beamer_gallery/
+\usetheme{boxes} %Boadilla?
+\usecolortheme{seagull}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\begin{frame}
+\frametitle{Indice}
+\center
+\tableofcontents
+\end{frame}
+
+\section{Contesto}
+
+\begin{frame}
+\frametitle{Scope}
+Given an evolving community of service \textbf{providers} and \textbf{consumers}\\
+To reduce dependencies services share \textbf{contracts} not \textbf{types}\\
+Challenge is: avoid coupling (hidden ones, in contract implementation)\\
+Service-Oriented Architecture
+HTTP%dividere in 2, http consumers etc
+%contracts, coupling, esempio
+%piu' immagini
+\end{frame}
+\begin{frame}
+Example: likes, change int to long? When would I use Pact
+\end{frame}
+
+\begin{frame}
+Why not Integration e2e test
+\end{frame}
+
+\begin{frame}
+\center
+\begin{tikzpicture}
+  \node (v1) at (5,8) {};
+  \node (v2) at (9, 2) {};
+  \node (v3) at (1, 2) {};
+  \node (h11) at (2.16, 4) {};
+  \node (h12) at (7.84, 4) {};
+  \node (h21) at (3.51, 6) {};
+  \node (h22) at (6.49, 6) {};
+  
+  \draw (v1.center) -- (v2.center);
+  \draw (v2.center) -- (v3.center);
+  \draw (v3.center) -- (v1.center);
+  \draw (h11) -- (h12);
+  \draw (h21) -- (h22);
+  
+  \node (text1) at (5,6.5){e2e};
+  \node (text2) at (5,5){Integration};
+  \node (text3) at (5,3){Unit};
+\end{tikzpicture}
+\end{frame}
+\begin{frame}
+\center
+\begin{tikzpicture}
+  \node (v1) at (5,8) {};
+  \node (v2) at (9, 2) {};
+  \node (v3) at (1, 2) {};
+  \node (h11) at (2.16, 4) {};
+  \node (h12) at (7.84, 4) {};
+  \node (h21) at (3.51, 6) {};
+  \node (h22) at (6.49, 6) {};
+  
+  \draw (v1.center) -- (v2.center);
+  \draw (v2.center) -- (v3.center);
+  \draw (v3.center) -- (v1.center);
+  \draw (h11) -- (h12);
+  \draw (h21) -- (h22);
+  
+  \node (text1) at (5,6.5){e2e};
+  \node (text2) at (5,5){Integration};
+  \node (text3) at (5,3){Unit};
+\end{tikzpicture}
+\end{frame}
+
+\section{Consumer-driven testing}
+\begin{frame}
+What is Consumer-driven testing
+\end{frame}
+
+\begin{frame}
+Postel's law
+\end{frame}
+
+\section{Pact}
+\begin{frame}
+What is Pact
+Supported languages
+\end{frame}
+
+\begin{frame}
+How pact works
+\end{frame}
+
+\begin{frame}
+Contract test not functional
+\end{frame}
+
+\begin{frame}
+best practices
+\end{frame}
+
+\section{Pact Broker}
+\begin{frame}
+Pact broker?%https://docs.pact.io/pact_broker/
+Downside: infos (version numbs and pass fail) are spread around (cmp:integration all in one)
+sol: pact broker
+\end{frame}
+
+\section{Esempio}
+\begin{frame}
+Esempio?
+\end{frame}
+
+\begin{frame}
+Q\&A
+\end{frame}
+
+\begin{frame}
+\frametitle{links}
+\end{frame}
+
+\end{document}
+

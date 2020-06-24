@@ -1,0 +1,15 @@
+\frametitle{Consumer-driven contracts}
+
+\begin{verbatim}
+Given "there is no user called Mary"
+When "creating a user with username Mary"
+  POST /users { "username": "mary", email: "...", ... }
+Then Expected Response is 200 OK
+\end{verbatim}
+\vspace*{1cm}
+\begin{verbatim}
+Given "there is already a user called Mary"
+When "creating a user with username Mary"
+  POST /users { "username": "mary", email: "...", ... }
+Then Expected Response is 409 Conflict
+\end{verbatim}
