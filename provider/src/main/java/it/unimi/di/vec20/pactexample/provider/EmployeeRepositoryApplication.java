@@ -12,6 +12,7 @@ public class EmployeeRepositoryApplication extends Application<EmployeeServiceCo
   }
 
   public static void main(String[] args) throws Exception {
+    EmployeeRepositoryDataStore.INSTANCE.addEmployee(new Employee("doe", "john", 1934, 10, 9, "john.doe@foobar.com"));
     new EmployeeRepositoryApplication().run("server");
   }
 }

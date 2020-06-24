@@ -25,7 +25,6 @@ public class RootResource {
         for (Employee e :
             EmployeeRepositoryDataStore.INSTANCE.findEmployeesBornOn(month.get(), day.get())) {
           result.put("name", e.getName());
-          result.put("surname", e.getSurname());
           result.put("emailaddress", e.getEmailAddress());
         }
         return result;

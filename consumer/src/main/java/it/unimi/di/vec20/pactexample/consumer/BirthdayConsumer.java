@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 public class BirthdayConsumer {
 
   /*
-      private EmployeeRepository employeeRepository;
+      private EmployeeRepository employeeRepository;TODO
       private EmailService emailService;
 
       public BirthdayService(EmployeeRepository employeeRepository, EmailService emailService) {
