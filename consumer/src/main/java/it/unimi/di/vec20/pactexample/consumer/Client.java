@@ -35,11 +35,9 @@ public class Client {
 
   public List<ConsumerEmployee> fetchAndProcessData(int month, int day) throws UnirestException {
     Optional<JsonNode> data = loadProviderJson(month, day);
-    System.out.println("data=" + data);
 
     if (data != null && data.isPresent()) {
       JSONObject jsonObject = data.get().getObject();
-      System.out.println(jsonObject.toString());
       String name = jsonObject.getString("name");
       String email = jsonObject.getString("emailaddress");
       String surname = jsonObject.getString("surname");
