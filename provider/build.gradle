@@ -59,6 +59,7 @@ test {
     systemProperty 'pactBrokerUser', 'pactBrokerUser'
     systemProperty 'pactBrokerPassword', 'pactBrokerPassword'
     systemProperty 'pact.verifier.publishResults', 'true'
+    systemProperty 'pact.provider.version', '1.0'
 }
 
 spotless {

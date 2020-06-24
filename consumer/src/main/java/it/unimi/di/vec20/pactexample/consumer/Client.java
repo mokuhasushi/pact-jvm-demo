@@ -33,7 +33,7 @@ public class Client {
     }
   }
 
-  public List<String> fetchAndProcessData(int month, int day) throws UnirestException {
+  public List<ConsumerEmployee> fetchAndProcessData(int month, int day) throws UnirestException {
     Optional<JsonNode> data = loadProviderJson(month, day);
     System.out.println("data=" + data);
 
@@ -42,8 +42,9 @@ public class Client {
       System.out.println(jsonObject.toString());
       String name = jsonObject.getString("name");
       String email = jsonObject.getString("emailaddress");
+      String surname = jsonObject.getString("surname");
 
-      return Arrays.asList(name, email);
+      return Arrays.asList(new ConsumerEmployee(surname,name,email));
     } else {
       return null;
     }
